@@ -30,7 +30,7 @@
 
 ## What It Actually Is
 
-VybePixie is not a 3D model generator. It's an **AI-native game and animation studio** that handles every stage of production:
+VybePixie is an **AI-native game and animation studio** that handles every stage of production:
 
 ```
 Prompt → Game Design → 3D Assets → Animation → Audio → Game Logic → Playable Export
