@@ -1,6 +1,6 @@
 # VybePixie — Tech Stack
 
-> Every technology choice across the desktop, frontend, backend, and AI layers
+> Every technology choice across the desktop, frontend, backend, AI, game, animation, and audio layers
 
 ---
 
@@ -25,7 +25,7 @@
 | **3D Rendering** | Three.js | 0.162 | Industry-standard WebGL library |
 | **3D React** | @react-three/fiber | 8.15 | Declarative Three.js in React components |
 | **3D Utilities** | @react-three/drei | 9.99 | Camera controls, gizmos, helpers, presets |
-| **Global State** | Redux Toolkit | 2.2 | Predictable state for complex UI (10+ panels) |
+| **Global State** | Redux Toolkit | 2.2 | Predictable state for complex UI (15+ panels) |
 | **Persistence** | Redux Persist | 6.0 | Survive app restarts, workspace recall |
 | **Local State** | Zustand | 4.5 | Lightweight stores for isolated components |
 | **Styling** | Tailwind CSS | 3.4 | Utility-first, rapid UI development |
@@ -67,6 +67,7 @@
 
 | Component | Choice | Why |
 |-----------|--------|-----|
+| **REST API** | FastAPI | High-performance async REST + WebSocket |
 | **Task Queue** | Celery 5.3–6.0 | Distributed background job processing for GPU tasks |
 | **Message Broker** | Redis 5.0–6.0 | Fast pub/sub and task distribution |
 | **Database ORM** | SQLAlchemy 2.0 (async) | Async database access with type safety |
@@ -96,18 +97,68 @@
 
 ---
 
-## 3D Engine Compatibility
+## Third-Party AI APIs
 
-### Export Targets
+### 3D Generation
 
-| Engine | Support Level |
-|--------|-------------|
-| **Unity** | URP and HDRP material export |
-| **Unreal Engine 5** | Static mesh + material export |
-| **Godot 4** | GLTF-based pipeline |
-| **Blender** | Native format bridge |
+| Service | Models | Purpose |
+|---------|--------|---------|
+| **Meshy API v2** | Text-to-3D, Image-to-3D, Multi-Image-to-3D | Primary external 3D generation |
+| **Tripo3D** | Text-to-3D | Alternative 3D provider |
+| **Luma AI** | Image-to-3D | Image-based 3D reconstruction |
 
-### Format Support
+### Image Generation
+
+| Service | Purpose |
+|---------|---------|
+| **OpenAI DALL-E** | Texture concepts, concept art |
+| **Stability.ai** | Stable Diffusion API for PBR materials |
+
+### Audio Generation
+
+| Service | Purpose |
+|---------|---------|
+| **ElevenLabs** | Voice synthesis — multi-speaker TTS with personality |
+| **PlayHT** | Alternative TTS provider |
+| **Suno** | AI music composition |
+| **Udio** | Alternative AI music generation |
+
+### LLM Providers
+
+| Provider | Models | Primary Use |
+|----------|--------|-------------|
+| **Anthropic** | Claude 4.x series | Creative direction, complex planning |
+| **OpenAI** | GPT-5 series | Game logic, code generation |
+| **Google** | Gemini 3.x | Multi-modal understanding |
+| **xAI** | Grok 4.x | Alternative reasoning |
+| **DeepSeek** | Chat, Coder, Reasoner | Cost-effective generation |
+| **ZhipuAI** | GLM 4.x series | Additional LLM capacity |
+
+---
+
+## Game Engine Export
+
+| Engine | Version | Export Contents |
+|--------|---------|----------------|
+| **Godot** | 4.x | Complete project: .tscn scenes, GDScript, assets, project.godot |
+| **Unity** | 2022+ | Complete project: scenes, C# scripts, prefabs, URP/HDRP materials |
+| **Unreal Engine** | 5.x | Complete project: levels, Blueprints, materials, asset packs |
+| **Blender** | 3.0–4.5 | .blend files with full scene hierarchy + DCC bridge |
+
+---
+
+## DCC Tool Bridges
+
+| Tool | Versions | Integration Type |
+|------|----------|-----------------|
+| **Blender** | 3.0 – 4.5 | Python addon, socket IPC, real-time bi-directional sync |
+| **Maya** | 2018 – 2025 | MEL/Python plugin, rigging and animation export |
+| **Houdini** | — | HDA support, procedural workflow integration |
+| **3DS Max** | — | Legacy pipeline import/export |
+
+---
+
+## 3D Format Support
 
 | Format | Type | Notes |
 |--------|------|-------|
@@ -118,6 +169,34 @@
 | **VRM** | Character | VTuber/avatar standard |
 | **USD** | Universal Scene | Pixar/studio standard |
 | **EXR** | Texture (32-bit) | HDR lighting/environment |
+| **PNG/JPEG/WebP** | Texture | Standard image formats |
+
+---
+
+## Rendering
+
+| Component | Technology | Purpose |
+|-----------|-----------|---------|
+| **Real-Time** | GL/ANGLE via Three.js | Live viewport editing, animation preview |
+| **Path Tracer** | CPU/GPU ray tracing | Photorealistic final renders |
+| **Post-Processing** | Custom pipeline | Bloom, DoF, motion blur, color grading, tone mapping |
+| **HDR Color** | sRGB, linear, ACEScg | Professional color management pipeline |
+| **XR/AR/VR** | WebXR, ARKit, ARCore, Meta Quest | Immersive output targets |
+
+---
+
+## Animation Runtime
+
+| Component | Purpose |
+|-----------|---------|
+| **Blend Trees** | Weighted blending between animation clips |
+| **State Machines** | Hierarchical FSMs with transition rules |
+| **IK Solver** | Inverse kinematics — foot placement, hand targeting, look-at |
+| **Mocap Pipeline** | BVH/FBX import, noise removal, retargeting |
+| **Secondary Physics** | Spring bones, cloth, jiggle physics, tails, wings, hair |
+| **Facial Animation** | Blendshapes, lip sync, eye tracking |
+| **Ragdoll** | Full physics-driven character animation |
+| **Animation Events** | Frame-triggered gameplay actions |
 
 ---
 
@@ -129,7 +208,8 @@
 | **Content Hashing** | SHA-256 | Cryptographic content addressing |
 | **Canonical Form** | JSON (sorted keys, no whitespace) | Deterministic serialization |
 | **Snapshots** | SQLite checkpoints | Fast state reconstruction without full replay |
+| **API Database** | PostgreSQL | Relational data for API services |
 
 ---
 
-*© 2024-2026 DevStudio AI Inc.. All rights reserved.*
+*© 2024-2026 DevStudio AI Inc. All rights reserved.*

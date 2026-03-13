@@ -1,12 +1,12 @@
 # VybePixie — Security Model
 
-> How VybePixie protects creative assets, ensures integrity, and enables trusted collaboration
+> How VybePixie protects creative assets, game projects, and generated content across the full AI studio pipeline
 
 ---
 
 ## Overview
 
-VybePixie's security model centers on two pillars: **tamper-evident integrity** (cryptographic proof that nothing has been altered) and **sandboxed isolation** (Tauri's Rust-based security boundary). Together, they ensure that creative work is protected, auditable, and trustworthy.
+VybePixie's security model centers on three pillars: **tamper-evident integrity** (cryptographic proof that nothing has been altered), **sandboxed isolation** (Tauri's Rust-based security boundary), and **AI governance** (validation gates on all generated content — 3D assets, game logic, animation, and audio). Together, they ensure that creative work is protected, auditable, and trustworthy across the entire game and animation production pipeline.
 
 ---
 
@@ -106,11 +106,35 @@ Every operation produces a logged event:
 
 | Control | Implementation |
 |---------|---------------|
-| **Governance gates** | AI output passes through validation before acceptance |
-| **Budget enforcement** | GPU/time budgets prevent runaway generation |
-| **Safety checks** | Content validation on generated assets |
-| **Retry policies** | Controlled retry with exponential backoff |
+| **Multi-agent governance** | Director, Producer, and TD agents cross-check each other's outputs |
+| **Governance gates** | All AI output (3D, animation, audio, game logic) passes validation before acceptance |
+| **Budget enforcement** | GPU/time/API-cost budgets prevent runaway generation |
+| **Safety checks** | Content validation on generated assets, animations, and audio |
+| **Game logic review** | Generated scripts and behavior trees validated before export |
+| **Retry policies** | Controlled retry with exponential backoff and cost tracking |
 | **Self-hosted option** | Run AI models locally — no data leaves the machine |
+| **API key isolation** | Per-provider credential management with encrypted storage |
+
+---
+
+## Game Export Security
+
+| Control | Implementation |
+|---------|---------------|
+| **Script validation** | Generated game scripts (GDScript, C#, Blueprints) are validated before export |
+| **Asset integrity** | Exported assets are hash-verified against the content-addressable registry |
+| **Project isolation** | Each game export is sandboxed in its own directory |
+| **No code injection** | Generated game logic is sanitized — no arbitrary code paths |
+
+---
+
+## Audio Generation Security
+
+| Control | Implementation |
+|---------|---------------|
+| **Voice synthesis isolation** | TTS API calls use scoped credentials with rate limiting |
+| **Music generation audit** | All AI-composed audio recorded in event ledger with attribution |
+| **Content filtering** | Generated voice and music pass through safety validation |
 
 ---
 
@@ -121,9 +145,11 @@ Every operation produces a logged event:
 | **Project files** | Stored locally on user's machine (Tauri FS) |
 | **Event ledger** | SQLite with integrity verification |
 | **API credentials** | Encrypted storage via system keychain |
+| **Game exports** | Local directory, user-controlled |
+| **Audio files** | Generated locally, user-owned |
 | **Temporary files** | Cleaned up on session end |
 | **Cloud sync** | Optional, encrypted in transit |
 
 ---
 
-*© 2024-2026 DevStudio AI Inc.. All rights reserved.*
+*© 2024-2026 DevStudio AI Inc. All rights reserved.*
