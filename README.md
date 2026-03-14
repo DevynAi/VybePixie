@@ -48,6 +48,8 @@ The same pipeline works for standalone animation, cinematic sequences, and indiv
 - **Integrated Audio** — AI voice synthesis, AI music composition, procedural soundscapes
 - **Event-Sourced Determinism** — Same input = same output, every time. Cryptographic proof of every decision.
 - **Multi-Engine Export** — Godot 4, Unity, Unreal Engine 5, Blender as first-class export targets
+- **Cinematic Generation** — Full Sequencer-driven cinematics generated alongside game projects, ready to render in-engine
+- **Native Preview** — Preview exported scenes in a built-in Three.js viewport without installing any target engine
 - **Commercial-Grade Licensing** — Tiered plans (Trial → Creator → Studio → Enterprise) with offline-first cryptographic verification and hardware binding
 - **Auto-Updates** — Seamless over-the-air updates via Tauri's native updater with signed binaries
 
@@ -65,6 +67,8 @@ The same pipeline works for standalone animation, cinematic sequences, and indiv
 | **Game Logic** | State machines, behavior trees, input systems, HUD/UI generation |
 | **Multiplayer Foundation** | Networking framework for multiplayer game exports |
 | **Physics Systems** | Rigid body, character controller, world-scale, ragdoll physics |
+| **Cinematic & Sequencer Generation** | AI-generated multi-shot camera sequences, full animated cinematics with Sequencer track data |
+| **Native Engine-Free Preview** | Preview exported game scenes directly in VybePixie's Three.js viewport — no target engine install required |
 
 ### 🎬 Animation Studio
 
@@ -353,7 +357,7 @@ VybePixie is a **Tauri hybrid desktop application** — a Rust-powered native co
 | **Assets** | Content library browser |
 | **Preview** | Live 3D viewport (real-time + path trace) |
 | **Validation** | QA checks with auto-fix |
-| **Export** | Engine export configuration (Godot/Unity/UE5) |
+| **Export** | Engine export configuration (Godot/Unity/UE5) with Sequencer & Lumen support |
 | **AgentGame** | Full game creation workflow |
 | **AI Chat** | Natural language assistant |
 | **AI 3D Generation** | Mesh generation interface |
@@ -400,6 +404,8 @@ VybePixie is in **active development**. Core systems are functional:
 - ✅ Procedural world building (terrain, architecture, vegetation)
 - ✅ Multi-agent AI orchestration (Director, Producer, TD)
 - ✅ 3D generation via Meshy, Tripo3D, Luma AI + self-hosted models
+- ✅ Cinematic & Sequencer generation (multi-shot camera sequences, full animated cinematics)
+- ✅ Native engine-free preview (Three.js viewport for exported scenes)
 - ✅ DCC bridges (Blender, Maya, Houdini, 3DS Max)
 - ✅ XR/AR/VR export (WebXR, ARKit, ARCore, Meta Quest)
 - ✅ 50+ procedural generation algorithms

@@ -408,7 +408,14 @@ The headline capability. Full prompt-to-game workflow:
 └───────────┬────────────────────┘
             ▼
 ┌────────────────────────────────┐
-│  6. Game Logic                 │
+│  6. Cinematic Generation       │
+│     • Multi-shot camera seqs   │
+│     • Sequencer track data     │
+│     • Animated cinematics      │
+└───────────┬────────────────────┘
+            ▼
+┌────────────────────────────────┐
+│  7. Game Logic                 │
 │     • State machines           │
 │     • Behavior trees           │
 │     • Input mapping            │
@@ -417,12 +424,19 @@ The headline capability. Full prompt-to-game workflow:
 └───────────┬────────────────────┘
             ▼
 ┌────────────────────────────────┐
-│  7. Export                     │
+│  8. Export                     │
 │     • Godot 4.x project       │
 │     • Unity project            │
 │     • Unreal Engine 5 project  │
 │     • Full project structure   │
 │     • Ready to run             │
+└───────────┬────────────────────┘
+            ▼
+┌────────────────────────────────┐
+│  9. Native Preview             │
+│     • Three.js viewport        │
+│     • No target engine needed  │
+│     • Instant scene playback   │
 └────────────────────────────────┘
 ```
 
@@ -443,7 +457,7 @@ The headline capability. Full prompt-to-game workflow:
 |--------|-------------|
 | **Godot 4.x** | Complete project: .tscn scenes, GDScript, assets, project.godot |
 | **Unity** | Complete project: scenes, C# scripts, prefabs, URP/HDRP materials |
-| **Unreal Engine 5** | Complete project: levels, Blueprints, materials, asset packs |
+| **Unreal Engine 5** | Complete project: Maps, Cinematics (Sequencer), Blueprints, C++ stubs, Config — Lumen GI enabled, glTFRuntime |
 | **Blender** | .blend files with full scene hierarchy |
 
 ---

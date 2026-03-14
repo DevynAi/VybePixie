@@ -143,7 +143,7 @@
 |--------|---------|----------------|
 | **Godot** | 4.x | Complete project: .tscn scenes, GDScript, assets, project.godot |
 | **Unity** | 2022+ | Complete project: scenes, C# scripts, prefabs, URP/HDRP materials |
-| **Unreal Engine** | 5.x | Complete project: levels, Blueprints, materials, asset packs |
+| **Unreal Engine** | 5.3+ | Complete project: Maps, Cinematics (Sequencer tracks), Blueprints, C++ stubs, Config — Lumen GI, glTFRuntime |
 | **Blender** | 3.0–4.5 | .blend files with full scene hierarchy + DCC bridge |
 
 ---
